@@ -1,0 +1,81 @@
+---
+import Container from './Container.astro';
+import { globals } from '../data/globals';
+---
+
+<Container
+	maxWidth={globals.maxWidthContainter}
+	padding={globals.paddingContainer}
+>
+	<header>
+		<h1>logo</h1>
+		<nav class='navbar'>
+			<a href='/'>Home</a>
+			<a href='/about'>About</a>
+			<a href='/blog'>Blog</a>
+		</nav>
+		<div class='login'>
+			<button>Sign in</button>
+			<button>Create account</button>
+		</div>
+	</header>
+</Container>
+
+<style>
+	header {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		padding: 1rem;
+		text-align: center;
+
+		@media (width > 615px) {
+			grid-template-columns: max-content auto max-content;
+			justify-content: unset;
+			text-align: left;
+		}
+		h1 {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-weight: 200;
+		}
+		nav {
+			padding-left: 1rem;
+			display: flex;
+			gap: 2.3125rem;
+			transform: translateY(0.2rem);
+			a {
+				font-family: 'Plus Jakarta Sans', sans-serif;
+				font-weight: 200;
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+		.login {
+			transform: translateY(0.2rem);
+			button {
+				cursor: pointer;
+				padding: 0.5rem 1rem;
+				background-color: var(--bg-primary);
+				border: 1px solid var(--fg-primary);
+				color: var(--fg-primary);
+				border-radius: 0.3725rem;
+				&:first-child {
+					border: 1px solid var(--bg-primary);
+					&:hover {
+						background-color: var(--fg-primary);
+						color: var(--bg-primary);
+					}
+				}
+				&:last-child {
+					background-color: var(--bg-primary);
+					color: var(--fg-primary);
+					&:hover {
+						background-color: var(--fg-primary);
+						color: var(--bg-primary);
+					}
+				}
+			}
+		}
+	}
+</style>

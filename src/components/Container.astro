@@ -1,0 +1,22 @@
+---
+type Props = {
+	maxWidth?: string;
+	padding?: string;
+	class?: string;
+};
+const { maxWidth = '100%', padding = '0rem' } = Astro.props;
+---
+
+<div {...Astro.props}>
+	<slot />
+</div>
+
+<style define:vars={{ maxWidth, padding }}>
+	div {
+		width: min(100% - var(--padding), var(--maxWidth));
+		margin-inline: auto;
+		@media (width > var(--maxWidth)) {
+			width: var(--maxWidth);
+		}
+	}
+</style>
