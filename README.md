@@ -1,13 +1,4 @@
-# The ultimate Astro's template to quick start projects
+# Just a testing repo to clone a few components from: [landingfolio](https://www.landingfolio.com/) 
 
-!['astro ultimate template'](/public/astrotemplate.webp)
-
-## This configuration has:
-
-(everything is tested on VSCode not testes on Webstorm or any orher IDE)
-
-- [x] Prettier
-- [x] EsLint
-- [x] Custom Aliases
-- [x] Internationalization i18n
-- [x] View Transitions (make sure if you need any dark theme, or loading JS on any page you will have to use astro:page-load)
+<!-- link in markdown -->
+[Landingfolio](https://www.landingfolio.com/library)
