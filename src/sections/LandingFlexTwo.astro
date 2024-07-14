@@ -1,5 +1,158 @@
 ---
+import BgCards from '@assets/BgCards.astro';
+import Container from '@components/Container.astro';
 import NavbarBetween from '@components/NavbarBetween.astro';
+import { globals } from '@data/globals';
+
+const maxWidth = globals.maxWidthContainter;
+const padding = globals.paddingContainer;
 ---
 
-<NavbarBetween />
+<Container maxWidth={maxWidth} padding={padding}>
+	<NavbarBetween />
+	<main>
+		<section>
+			<h1>A special credit card made for Developers.</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci id
+				maxime perspiciatis optio recusandae eum consequatur? Quod.
+			</p>
+			<form class='emailform' action=''>
+				<input type='text' placeholder='Enter your email' required />
+				<button type='submit'>Get Free Card</button>
+			</form>
+			<article class='metrics'>
+				<div>
+					<p>2934</p>
+					<p>Cards Delivered</p>
+				</div>
+				<div>
+					<p>$1M+</p>
+					<p>Transactions completed</p>
+				</div>
+			</article>
+		</section>
+		<section class='covers'>
+			<img src='/Card 1.png' alt='Card 1' />
+			<img src='/Card 2.png' alt='Card 1' />
+			<BgCards class='bgcards' />
+		</section>
+	</main>
+</Container>
+
+<style>
+	main {
+		width: 90%;
+		margin-inline: auto;
+		padding: 2rem 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		> section p {
+			padding: 2.4rem 0;
+			text-wrap: pretty;
+		}
+		@media (width > 65rem) {
+			grid-template-columns: repeat(2, 1fr);
+			> * {
+				place-content: center;
+				width: 100%;
+				padding: 2rem;
+			}
+		}
+	}
+	h1 {
+		font-weight: 600;
+		font-size: clamp(1rem, 3vw + 1rem, 3.625rem);
+		/* text-wrap: balance; */
+	}
+
+	.emailform {
+		border: 1px solid var(--fg-primary);
+		width: max-content;
+		padding: 0.3rem 0.3rem;
+		border-radius: 0.5rem;
+		input {
+			width: 25ch;
+			border: none;
+			padding: 0.3rem 0.3rem;
+			background: var(--bg-primary);
+			&:focus {
+				outline: none;
+			}
+		}
+		button {
+			background: var(--fg-primary);
+			color: var(--bg-primary);
+			border: none;
+			padding: 0.6rem 1rem;
+			font-weight: 600;
+			cursor: pointer;
+			border-radius: 0.5rem;
+		}
+	}
+	.covers {
+		position: relative;
+		display: grid;
+		grid-template: 'imgcontainer';
+		place-items: center;
+		place-content: center;
+		padding: 0;
+		width: min(100% - 2rem, 45rem);
+		& > * {
+			grid-area: imgcontainer;
+			&:first-child {
+				z-index: 1;
+				translate: -3rem -1rem;
+				@media (width > 65rem) {
+					translate: -6.5rem -1rem;
+				}
+			}
+			&:nth-child(2) {
+				z-index: 0;
+				translate: 2.6rem 7rem;
+			}
+			&:nth-child(3) {
+				z-index: -1;
+				translate: 3.6rem 2rem;
+				height: 100%;
+				width: auto;
+			}
+		}
+		@media (width > 65rem) {
+			min-height: 80vh;
+		}
+	}
+
+	.metrics {
+		display: grid;
+		max-width: max-content;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: 7rem;
+		> div {
+			display: flex;
+			gap: 0.4rem;
+			align-items: center;
+			p:first-child {
+				font-size: 2rem;
+				font-weight: 200;
+			}
+			p:last-child {
+				color: var(--fg-primary);
+				font-size: 0.6rem;
+				max-width: 10ch;
+				font-weight: 200;
+				/* color: rgba(255, 255, 255, 0.5); */
+			}
+		}
+	}
+	body.dark .metrics {
+		> div {
+			p:last-child {
+				color: rgba(255, 255, 255, 0.5);
+				font-weight: 100;
+			}
+		}
+	}
+</style>

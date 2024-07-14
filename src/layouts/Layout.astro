@@ -1,6 +1,4 @@
 ---
-import NavbarBetween from '@components/NavbarBetween.astro';
-
 interface Props {
 	title: string;
 }
@@ -18,103 +16,104 @@ const { title } = Astro.props;
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class='dark'>
+	<body>
 		<slot />
 	</body>
-</html>
-<style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-	:root {
-		--bg-primary: #fafafa;
-		--fg-primary: #18181b;
-	}
-	html {
-		box-sizing: border-box;
-		font-size: 16px;
-		color-scheme: dark light;
-	}
 
-	*,
-	*:before,
-	*:after {
-		box-sizing: inherit;
-	}
-
-	body,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ol,
-	ul {
-		margin: 0;
-		padding: 0;
-		font-weight: normal;
-	}
-
-	img,
-	picture,
-	video,
-	canvas,
-	svg {
-		display: block;
-		max-width: 100%;
-	}
-
-	input,
-	button,
-	textarea,
-	select {
-		font: inherit;
-	}
-
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		overflow-wrap: break-word;
-	}
-	p {
-		line-height: 1.5;
-	}
-	body {
-		background: var(--bg-primary);
-		color: var(--fg-primary);
-		font-family:
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			'Open Sans',
-			'Helvetica Neue',
-			sans-serif;
-	}
-	body.dark {
-		--bg-primary: #18181b;
-		--fg-primary: #fafafa;
-	}
-	@media (prefers-reduced-motion: reduce) {
-		html:focus-within {
-			scroll-behavior: auto;
+	<style is:global>
+		@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+		:root {
+			--bg-primary: #fafafa;
+			--fg-primary: #18181b;
+		}
+		html {
+			box-sizing: border-box;
+			font-size: 16px;
+			color-scheme: dark light;
 		}
 
 		*,
 		*:before,
 		*:after {
-			animation-duration: 0.01ms !important;
-			animation-iteration-count: 1 !important;
-			transition-duration: 0.01ms !important;
-			scroll-behavior: auto !important;
+			box-sizing: inherit;
 		}
-	}
-</style>
+
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ol,
+		ul {
+			margin: 0;
+			padding: 0;
+			font-weight: normal;
+		}
+
+		img,
+		picture,
+		video,
+		canvas,
+		svg {
+			display: block;
+			max-width: 100%;
+		}
+
+		input,
+		button,
+		textarea,
+		select {
+			font: inherit;
+		}
+
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			overflow-wrap: break-word;
+		}
+		p {
+			line-height: 1.5;
+		}
+		body {
+			background: var(--bg-primary);
+			color: var(--fg-primary);
+			font-family:
+				system-ui,
+				-apple-system,
+				BlinkMacSystemFont,
+				'Segoe UI',
+				Roboto,
+				Oxygen,
+				Ubuntu,
+				Cantarell,
+				'Open Sans',
+				'Helvetica Neue',
+				sans-serif;
+		}
+		body.dark {
+			--bg-primary: #18181b;
+			--fg-primary: #fafafa;
+		}
+		@media (prefers-reduced-motion: reduce) {
+			html:focus-within {
+				scroll-behavior: auto;
+			}
+
+			*,
+			*:before,
+			*:after {
+				animation-duration: 0.01ms !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: 0.01ms !important;
+				scroll-behavior: auto !important;
+			}
+		}
+	</style>
+</html>

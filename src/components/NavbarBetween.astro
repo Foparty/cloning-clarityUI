@@ -1,28 +1,19 @@
----
-import Container from './Container.astro';
-import { globals } from '../data/globals';
----
-
-<Container
-	maxWidth={globals.maxWidthContainter}
-	padding={globals.paddingContainer}
->
-	<header>
-		<h1>logo</h1>
-		<nav class='navbar'>
-			<a href='/'>Home</a>
-			<a href='/about'>About</a>
-			<a href='/blog'>Blog</a>
-		</nav>
-		<div class='login'>
-			<button>Sign in</button>
-			<button>Create account</button>
-		</div>
-	</header>
-</Container>
+<header>
+	<h1>logo</h1>
+	<nav class='navbar'>
+		<a href='/'>Home</a>
+		<a href='/about'>About</a>
+		<a href='/blog'>Blog</a>
+	</nav>
+	<div class='login'>
+		<button>Sign in</button>
+		<button>Create account</button>
+	</div>
+</header>
 
 <style>
 	header {
+		margin-top: 3rem;
 		display: grid;
 		align-items: center;
 		justify-content: center;
@@ -34,6 +25,7 @@ import { globals } from '../data/globals';
 			grid-template-columns: max-content auto max-content;
 			justify-content: unset;
 			text-align: left;
+			padding: 1rem 0;
 		}
 		h1 {
 			font-family: 'Plus Jakarta Sans', sans-serif;
@@ -63,16 +55,17 @@ import { globals } from '../data/globals';
 				&:first-child {
 					border: 1px solid var(--bg-primary);
 					&:hover {
+						border: 1px solid var(--fg-primary);
 						background-color: var(--fg-primary);
 						color: var(--bg-primary);
 					}
 				}
 				&:last-child {
-					background-color: var(--bg-primary);
-					color: var(--fg-primary);
+					background-color: var(--fg-primary);
+					color: var(--bg-primary);
 					&:hover {
-						background-color: var(--fg-primary);
-						color: var(--bg-primary);
+						background-color: var(--bg-primary);
+						color: var(--fg-primary);
 					}
 				}
 			}
