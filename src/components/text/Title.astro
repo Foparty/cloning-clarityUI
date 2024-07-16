@@ -1,0 +1,49 @@
+---
+type Props = {
+	text: string;
+	type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	color?: string;
+};
+const { text, type = 'h2', color = 'currentColor' }: Props = Astro.props;
+// switch to render different tags depending on the type
+---
+
+{type === 'h1' && <h1>{text}</h1>}
+{type === 'h2' && <h2>{text}</h2>}
+{type === 'h3' && <h3>{text}</h3>}
+{type === 'h4' && <h4>{text}</h4>}
+{type === 'h5' && <h5>{text}</h5>}
+{type === 'h6' && <h6>{text}</h6>}
+
+<style define:vars={{ color }}>
+	h1 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(1rem, 3vw + 1rem, 3.75rem);
+	}
+	h2 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(0.9rem, 3vw + 0.9rem, 3rem);
+	}
+	h3 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(0.8rem, 3vw + 0.8rem, 2.25rem);
+	}
+	h4 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(0.7rem, 3vw + 0.7rem, 1.875rem);
+	}
+	h5 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(0.6rem, 3vw + 0.6rem, 1.5rem);
+	}
+	h6 {
+		color: var(--color);
+		font-weight: 600;
+		font-size: clamp(0.5rem, 3vw + 0.5rem, 1.125rem);
+	}
+</style>
