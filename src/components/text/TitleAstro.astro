@@ -1,0 +1,16 @@
+---
+type Props = {
+	tag: string;
+	color?: string;
+};
+
+const { tag: Tag, color = 'currentColor' } = Astro.props;
+---
+
+<Tag><slot /></Tag>
+
+<style define:vars={{ color }}>
+	h1 {
+		color: var(--color);
+	}
+</style>
