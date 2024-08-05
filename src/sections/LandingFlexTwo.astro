@@ -2,7 +2,7 @@
 import BgCards from '@assets/BgCards.astro';
 import Container from '@components/Container.astro';
 import NavbarBetween from '@components/NavbarBetween.astro';
-import Title from '@components/text/Title.astro';
+import Text from '@components/text/Text.astro';
 import { globals } from '@data/globals';
 
 const maxWidth = globals.maxWidthContainter;
@@ -13,12 +13,8 @@ const padding = globals.paddingContainer;
 	<NavbarBetween />
 	<main>
 		<section>
-			<Title text='Welcome to the landing page' type='h1' />
-
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci id
-				maxime perspiciatis optio Quod.
-			</p>
+			<Text text='Welcome to the landing page' type='h1' />
+			<Text type='p'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci id maxime perspiciatis optio Quod. </Text>
 			<form class='emailform' action=''>
 				<input type='text' placeholder='Enter your email' required />
 				<button type='submit'>Get Free Card</button>
@@ -50,10 +46,15 @@ const padding = globals.paddingContainer;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
+
+		section {
+			width: min(100% - 2rem, 45rem);
+		}
+
 		> section p {
 			padding: 2.4rem 0;
-			text-wrap: pretty;
 		}
+
 		@media (width > 65rem) {
 			grid-template-columns: repeat(2, 1fr);
 			> * {
@@ -63,26 +64,25 @@ const padding = globals.paddingContainer;
 			}
 		}
 	}
-	h1 {
-		font-weight: 600;
-		font-size: clamp(1rem, 3vw + 1rem, 3.625rem);
-		/* text-wrap: balance; */
-	}
 
 	.emailform {
+		width: min(100% - 2rem, 45rem);
 		border: 1px solid var(--fg-primary);
 		width: max-content;
 		padding: 0.3rem 0.3rem;
 		border-radius: 0.5rem;
+
 		input {
 			width: 25ch;
 			border: none;
 			padding: 0.3rem 0.3rem;
 			background: var(--bg-primary);
+
 			&:focus {
 				outline: none;
 			}
 		}
+
 		button {
 			background: var(--fg-primary);
 			color: var(--bg-primary);
@@ -93,6 +93,7 @@ const padding = globals.paddingContainer;
 			border-radius: 0.5rem;
 		}
 	}
+
 	.covers {
 		position: relative;
 		display: grid;
@@ -101,8 +102,10 @@ const padding = globals.paddingContainer;
 		place-content: center;
 		padding: 0;
 		width: min(100% - 2rem, 45rem);
+
 		& > * {
 			grid-area: imgcontainer;
+
 			&:first-child {
 				z-index: 1;
 				translate: -3rem -1rem;
@@ -110,10 +113,12 @@ const padding = globals.paddingContainer;
 					translate: -6.5rem -1rem;
 				}
 			}
+
 			&:nth-child(2) {
 				z-index: 0;
 				translate: 2.6rem 7rem;
 			}
+
 			&:nth-child(3) {
 				z-index: -1;
 				translate: 3.6rem 2rem;
@@ -121,6 +126,7 @@ const padding = globals.paddingContainer;
 				width: auto;
 			}
 		}
+
 		@media (width > 65rem) {
 			min-height: 80vh;
 		}
@@ -128,18 +134,22 @@ const padding = globals.paddingContainer;
 
 	.metrics {
 		display: grid;
-		max-width: max-content;
+		width: min(100% - 2rem, 45rem);
+		max-width: fit-content;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		gap: 7rem;
+		gap: 1rem;
+
 		> div {
 			display: flex;
 			gap: 0.4rem;
 			align-items: center;
+
 			p:first-child {
 				font-size: 2rem;
 				font-weight: 200;
 			}
+
 			p:last-child {
 				color: var(--fg-primary);
 				font-size: 0.6rem;
@@ -149,6 +159,7 @@ const padding = globals.paddingContainer;
 			}
 		}
 	}
+
 	body.dark .metrics {
 		> div {
 			p:last-child {
@@ -156,5 +167,9 @@ const padding = globals.paddingContainer;
 				font-weight: 100;
 			}
 		}
+	}
+
+	.bgcards {
+		width: 100%;
 	}
 </style>

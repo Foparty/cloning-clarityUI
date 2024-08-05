@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 :root {
-  --bg-primary: #fafafa;
-  --fg-primary: #18181b;
-  --bodyBlockPadding: 2rem;
+	--bg-primary: #fafafa;
+	--fg-primary: #18181b;
+	--bodyBlockPadding: 2rem;
 }
 html {
-  box-sizing: border-box;
-  font-size: 16px;
-  color-scheme: dark light;
+	box-sizing: border-box;
+	font-size: 16px;
+	color-scheme: dark light;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body,
@@ -26,24 +26,24 @@ h6,
 p,
 ol,
 ul {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
 }
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 p,
@@ -53,43 +53,45 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 p {
-  line-height: 1.5;
+	line-height: 1.5;
+	text-wrap: pretty;
 }
 body {
-  background: var(--bg-primary);
-  color: var(--fg-primary);
-  padding-block: var(--bodyBlockPadding);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+	background: var(--bg-primary);
+	color: var(--fg-primary);
+	padding-block: var(--bodyBlockPadding);
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
 }
 body.dark {
-  --bg-primary: #18181b;
-  --fg-primary: #fafafa;
+	--bg-primary: #18181b;
+	--fg-primary: #fafafa;
 }
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+	html:focus-within {
+		scroll-behavior: auto;
+	}
 
-  *,
-  *:before,
-  *:after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+	*,
+	*:before,
+	*:after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
